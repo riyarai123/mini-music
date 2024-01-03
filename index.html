@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>music</title>
+	<style type="text/css">
+				
+	@import url('https://fonts.googleapis.com/css2?family=poppins:wght@200;300;400;')
+	*{
+	margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'poppins', sans-serif;
+}
+body{
+	display: grid;
+	height: 100%;
+	background: #7f5539 ;
+	margin: 40px;
+}
+input{
+	height: 50px;
+	width: 500px;
+	margin-left: 500px;
+	text-align: center;
+	font-size: 20px;
+	box-shadow: 5px 5px 5px 3px #fff;
+}
+ul{
+	list-style-type: none;
+}
+ul .box{
+	display: flex;
+	flex-direction: column;
+
+}
+ul li div{
+	width: 400px;
+	height: 350px;
+	display: flex;
+	background: #331a00;
+	box-sizing: border-box;
+	margin: 50px;
+	margin-left: 500px;
+	padding: 50px;
+	border-radius: 6px;
+	box-shadow: 5px  5px 5px 5px #331a00;
+	}
+	ul li div:hover{
+		box-shadow: 5px 5px 5px 5px #ffcc99;
+
+		transition-duration: 6s;
+
+	}
+	li .box img{
+	height: 180px;
+	width: 300px;
+	border-radius: 6px;
+	object-fit: cover; 
+	text-align: center;
+}
+li .box span{
+	font-size: 25px;
+	font-weight: bold;
+	transition-duration: 3s;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+li .box span:hover{
+	
+	color: black ;
+	font-size: 30px;
+	
+	transition-duration: 6s;
+}
+ .box audio{
+	color: #fff;
+	width: 300px;
+	text-align: center; 
+	height: 100px;
+	margin-top: 5px;
+	margin-left: 20px;
+	margin-right: 25px;
+
+		margin-bottom: 5px;
+	border-radius: 10px;
+	
+	
+
+}
+h1{
+	font-size: 70px;
+	font-weight: bold;
+	 margin-top : 10px;
+	 text-align: center;
+}
+h1:hover{
+	float: center;
+	font-size: 80px;
+	color: #fff;
+	transition-duration: 6s;
+}
+
+.
+	</style>
+</head>
+<body>
+	<h1>Its Play time</h1>
+<input type="text"id="searchInput" placeholder="search Music here" oninput="filterList()">
+<ul id="itemlist">
+	<li>
+		<div class="box">
+			<img src="radhe.jpeg">
+			<span>Tum-Prem-Ho</span>
+			<audio controls><source src="radhe.mp3" type="audio/mp3"></audio>
+		</div>
+	</li>
+	<li>
+		<div class="box">
+			<img src="tere hwale.jpeg">
+			<span>Tere-Hawaale</span>
+			<audio controls><source src="Tere-Hawaale.mp3" type="audio/mp3"></audio>
+		</div>
+	</li>
+	<li>
+		<div class="box">
+			<img src="ram aynge.jpeg">
+			<span>Ram-Aayenge</span>
+			<audio controls><source src="Ram-Aayenge.mp3" type="audio/mp3"></audio>
+		</div>
+	</li>
+	<li>
+		<div class="box">
+			<img src="phir.jpg">
+			<span>Phir Or Kya Chaiye</span>
+			<audio controls><source src="Tu-Hai.mp3" type="audio/mp3"></audio>
+		</div>
+	</li>
+	<li>
+		<div class="box">
+			<img src="tu hai.jpeg">
+			<span>Tu-Hai-Kahan</span>
+			<audio controls><source src="Tu-Hai-Kahan.mp3" type="audio/mp3"></audio>
+		</div>
+	</li>
+</ul>
+<script type="text/javascript">
+	function filterList(){
+	var name = document.getElementById("searchInput").value.toLowerCase();
+	var mydata = document.querySelectorAll("#itemlist li");
+
+	mydata.forEach(function(val){
+		var av_val = val.textContent.toLowerCase();
+
+		if(av_val.includes(name)){
+			val.style.display = "block";
+		}
+		else{
+			val.style.display = "none";
+		}
+	})
+}
+
+</script>
+</body>
+</html>
